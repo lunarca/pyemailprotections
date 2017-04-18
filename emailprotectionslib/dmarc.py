@@ -1,6 +1,6 @@
 import re
 import logging
-import Resolver
+from .Resolver import resolver
 import tldextract
 
 
@@ -136,7 +136,7 @@ def _find_record_from_answers(txt_records):
 
 def get_dmarc_string_for_domain(domain):
     try:
-        txt_records = Resolver.resolver().query("_dmarc." + domain, query_type="TXT")
+        txt_records = resolver().query("_dmarc." + domain, query_type="TXT")
         return _find_record_from_answers(txt_records)
     except IOError:
         # This is returned usually as a NXDOMAIN, which is expected.

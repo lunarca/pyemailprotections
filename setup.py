@@ -1,4 +1,5 @@
-from distutils.core import setup
+from setuptools import setup
+
 
 setup(
     name="emailprotectionslib",
@@ -8,7 +9,7 @@ setup(
     author="Alex DeFreese",
     author_email="alexdefreese@gmail.com",
     url="https://github.com/lunarca/pyemailprotectionslib",
-    requires=['dnslib', 'tldextract', 'future'],
+    install_requires=['dnslib', 'tldextract', 'future'],
     classifiers=[
         "Development Status :: 1 - Planning",
         "Environment :: Plugins",
